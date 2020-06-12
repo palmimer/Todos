@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\list-todos",
+    "\\src\\app\\service",
+    "\\src\\app\\welcome"
+  ],
+  "SelectedNode": "\\src\\app\\service\\welcome-data.service.ts",
+  "PreviewInSolutionExplorer": false
+}

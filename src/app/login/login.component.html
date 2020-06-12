@@ -1,0 +1,25 @@
+<div id="login-box">
+  <form name="login" class="form-signin" method="get">
+    <h2 class="form-signin-heading">Please, log in!</h2>
+    <div class="alert alert-warning" *ngIf="invalidLogin">{{ errorMessage }}</div>
+    <p>
+      <label for="username" class="sr-only">Name</label>
+      <input type="text" id="name" name="name" class="form-control" [(ngModel)]="name" placeholder="your name">
+    </p>
+    <p>
+      <label for="username" class="sr-only">Username</label>
+      <input type="text" id="username" name="username" class="form-control" [(ngModel)]="username" placeholder="e-mail address" required autofocus>
+    </p>
+    <p>
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" id="password" name="password" class="form-control" [(ngModel)]="password" placeholder="password" required>
+    </p>
+    <div class="checkbox">
+      <label>
+        <input id="remember-me" name="remember-me" type="checkbox" />
+        Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)=handleLogin()>Belépés</button>
+  </form>
+</div>
