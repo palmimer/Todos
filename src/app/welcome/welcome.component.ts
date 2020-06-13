@@ -33,7 +33,7 @@ export class WelcomeComponent implements OnInit {
     //with the help of subscribe it is executed, and the answer is needed to be captured in a variable
     //to get an answer we have to set @CrossOrigin annotation on the java controller
     //subscribe method is an asynchronous call, it will not be able to return the result
-    //execute the function and whenever the response comes back do the handleresponse method
+    //execute the function and whenever the response comes back, do the handleSuccessfulResponse method
     this.service.executeHelloWorldService().subscribe(
         response => this.handleSuccessfulResponse(response),
         error => this.handleErrorResponse(error)

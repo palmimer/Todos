@@ -1,12 +1,17 @@
 <h1>My Todos</h1>
 
+<div class="alert alert-warning" *ngIf="actionResultMessage">{{ actionResultMessage }}</div>
+
 <div class="container">
+  
   <table class="table">
     <thead>
       <tr>
         <th>Description</th>
         <th>Target Date</th>
         <th>Is Completed?</th>
+        <th>Actions</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -14,8 +19,8 @@
         <td>{{ todo.description }}</td>
         <td>{{ todo.targetDate | date }}</td>
         <td>{{ todo.isCompleted }}</td>
-        <td><button class="btn btn-sm btn-secondary" (click) = editTodo()>Edit</button></td>
-        <td><button class="btn btn-sm btn-danger" (click) = deleteTodo()>Delete</button></td>
+        <td><button class="btn btn-sm btn-secondary" (click)=editTodo()>Edit</button></td>
+        <td><button class="btn btn-sm btn-danger" (click)=deleteTodo(todo.id)>Delete</button></td>
       </tr>
     </tbody>
   </table>
