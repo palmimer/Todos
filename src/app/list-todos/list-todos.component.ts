@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoDataService } from '../service/data/todo-data.service';
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TodoModalComponent } from '../todo-modal/todo-modal.component';
 
 export class Todo {
   constructor(
@@ -21,23 +24,16 @@ export class ListTodosComponent implements OnInit {
 
   actionResultMessage: string
 
-  //  = [
-  //  new Todo(1, 'Learn Angular', new Date(), false),
-  //  new Todo(2, 'Take a vacation', new Date(), false),
-  //  new Todo(3, 'Cook some dinner', new Date(), false),
-  //]
-
-  //todo = {
-  //  id: 1,
-  //  description: 'learn angular'
-  //}
-
+ 
   constructor(
-    private todoService: TodoDataService
+    private todoService: TodoDataService,
+    private router: Router,
+    private modalService: NgbModal,
+    
   ) { }
 
   ngOnInit(): void {
-    //we will retrieve the data from the service
+    //we will retrieve the data from the todoService
     this.refreshTodos();
   }
 
@@ -51,10 +47,6 @@ export class ListTodosComponent implements OnInit {
       });
   }
 
-  editTodo() {
-    console.log("Todo should be edited");
-  }
-
   deleteTodo(id) {
     console.log("Number " + id + " Todo should be deleted")
     this.todoService.deleteTodo('Merci', id).subscribe(
@@ -65,4 +57,31 @@ export class ListTodosComponent implements OnInit {
       });
     this.actionResultMessage = null;
   }
+
+  editTodo(id) {
+    this.router.navigate(['todos', id]);
+  }
+
+  createNewTodo() {
+    //this will open the page of the Todo Form
+    this.router.navigate(['todos', -1]);
+  }
+
+  createNewTodoInModal() {
+    //opening the modal
+    const modalRef = this.modalService.open(TodoModalComponent);
+    //passing an empty new todo to the modal
+    //modalRef.componentInstance.todo = new Todo(-1, '', new Date, false);
+
+    modalRef.result.then((result) => {
+      console.log(result);
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
 }
+
+
+  
+

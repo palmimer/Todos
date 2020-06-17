@@ -3,7 +3,7 @@
 <div class="alert alert-warning" *ngIf="actionResultMessage">{{ actionResultMessage }}</div>
 
 <div class="container">
-  
+
   <table class="table">
     <thead>
       <tr>
@@ -19,10 +19,15 @@
         <td>{{ todo.description }}</td>
         <td>{{ todo.targetDate | date }}</td>
         <td>{{ todo.isCompleted }}</td>
-        <td><button class="btn btn-sm btn-secondary" (click)=editTodo()>Edit</button></td>
-        <td><button class="btn btn-sm btn-danger" (click)=deleteTodo(todo.id)>Delete</button></td>
+        <td><button class="btn btn-sm btn-secondary" (click)="editTodo(todo.id)">Edit</button></td>
+        <td><button class="btn btn-sm btn-danger" (click)="deleteTodo(todo.id)">Delete</button></td>
       </tr>
     </tbody>
   </table>
+  <button type="button" class="btn btn-primary btn-block" (click)="createNewTodoInModal()">Add new todo</button>
+  
 </div>
+
+
+
 

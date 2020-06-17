@@ -3,8 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\welcome"
+    "\\src\\app\\service\\data",
+    "\\src\\app\\todo",
+    "\\src\\app\\todo-modal"
   ],
-  "SelectedNode": "\\src\\app\\app-routing.module.ts",
+  "SelectedNode": "\\src\\app\\todo-modal\\todo-modal.component.ts",
   "PreviewInSolutionExplorer": false
 }
