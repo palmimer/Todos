@@ -3,12 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\list-todos",
     "\\src\\app\\service",
-    "\\src\\app\\service\\data",
-    "\\src\\app\\todo",
-    "\\src\\app\\todo-modal"
+    "\\src\\app\\service\\data"
   ],
-  "SelectedNode": "\\src\\app\\list-todos\\list-todos.component.ts",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }
